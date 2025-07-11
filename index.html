@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faremate - Your Smart Transportation Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bubble-bg">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>🚗 Faremate</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#chat">Chat</a></li>
+                    <li><a href="https://julianwyh.github.io/SmartSave/">MoreBots</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Save Money on Every Trip!</h1>
+                    <p>Your AI-powered transportation assistant that finds the cheapest routes, compares prices, and helps you travel smart.</p>
+                    <div class="cta-buttons">
+                        <a href="#chat" class="btn-primary">Start Chatting</a>
+                        <a href="#features" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="chatbot-preview">
+                        <div class="chat-window">
+                            <div class="chat-header">
+                                <div class="bot-avatar">🤖</div>
+                                <span>Faremate</span>
+                                <div class="status-dot"></div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message bot-message">
+                                    <p>Welcome to SmartSave's transportation branch, Faremate. How can I help you start saving today?</p>
+                                </div>
+                                <div class="message user-message">
+                                    <p>How much to travel from Ang Mo Kio to Changi Airport?</p>
+                                </div>
+                                <div class="message bot-message">
+                                    <p>Give me a minute while I proceed with calculations...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>How Faremate helps?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Save Money</h3>
+                        <p>Faremate will help you find the cheapest options for your travels.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎫</div>
+                        <h3>Concession Passes</h3>
+                        <p>Frequent traveller? Faremate can help you consider a monthly concession pass.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Fare Calculation</h3>
+                        <p>Simple fare calculations - just give the stations and it can calculate the price for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chat" class="chat-section">
+            <div class="container">
+                <h2>Try Faremate Now!</h2>
+                <div class="chat-container">
+                    <div class="chat-interface" style="display: flex; justify-content: center; align-items: center;">
+                        <iframe
+                            id="botpress-iframe"
+                            src="https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/07/08/17/20250708172827-S6BIWWSC.json"
+                            allow="clipboard-write"
+                            style="width: 100%; height: 500px; border: none; border-radius: 10px;"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Faremate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Chat input functionality
+            const chatInput = document.querySelector('.chat-input');
+            const sendButton = document.querySelector('.send-button');
+            
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Simple demo response
+                    alert('Demo: Faremate would respond to: "' + message + '"');
+                    chatInput.value = '';
+                }
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
